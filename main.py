@@ -59,14 +59,16 @@ async def honeypot(
     
 @app.get("/")
 def root():
-    return {"status": "Agentic Honeypot API running"}
-
+    return {
+        "status": "ok",
+        "service": "Agentic Honeypot API",
+        "message": "Use /honeypot or /docs"
+    }
 
 @app.get("/health")
 def health():
+return {"status": "healthy"}
 
-    
-    @app.get("/favicon.ico")
+@app.get("/favicon.ico")
 def favicon():
     return {}
-return {"status": "healthy"}
