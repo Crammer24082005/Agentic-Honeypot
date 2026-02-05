@@ -56,7 +56,17 @@ async def honeypot(
         "persona_used": "confused_upi_user",
         **result
     }
+    
+@app.get("/")
+def root():
+    return {"status": "Agentic Honeypot API running"}
+
 
 @app.get("/health")
 def health():
-    return {"status": "healthy"}
+
+    
+    @app.get("/favicon.ico")
+def favicon():
+    return {}
+return {"status": "healthy"}
