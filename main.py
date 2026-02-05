@@ -67,8 +67,9 @@ def root():
 
 @app.get("/health")
 def health():
-return {"status": "healthy"}
+    return {"status": "healthy"}
 
 @app.get("/favicon.ico")
 def favicon():
     return {}
+
