@@ -3,7 +3,11 @@ import nltk
 import string
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+import nltk
 
+nltk.download("punkt")
+nltk.download("punkt_tab")
+nltk.download("stopwords")
 ps = PorterStemmer()
 
 nb_model = pickle.load(open('nb_model.pkl', 'rb'))
@@ -58,3 +62,4 @@ def is_scam(message):
     svc_pred = svc_model.predict(vector_input)[0]
 
     return nb_pred == 1 or svc_pred == 1
+
